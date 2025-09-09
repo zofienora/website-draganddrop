@@ -1,0 +1,16 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+}
+
+.header-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header-job {
+    font-size: 1.5rem;
+    color: rgb(206, 203, 203);
+    font-weight: bold;
+}
+
