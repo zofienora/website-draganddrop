@@ -9,6 +9,7 @@ import pic5 from '../../assets/pic5.jpeg';
 import pic6 from '../../assets/pic6.png';
 import pic7 from '../../assets/pic7.jpeg';
 import pic8 from '../../assets/pic8.jpeg';
+import { vh } from 'motion';
 
 
 
@@ -91,11 +92,12 @@ export default Header;
 
 
 const constraints = {
-    width: 300,
-    height: 300,
-    backgroundColor: "var(--hue-1-transparent)",
-    borderRadius: 10,
-}
+  width: '100vw',   // full viewport width
+  height: '100vh',  // full viewport height
+  backgroundColor: 'var(--hue-1-transparent)',
+  overflow: 'hidden',       // optional: hides overflow
+  position: 'relative'      // important for drag constraints
+};
 
 const picone = {
   width: 100,
