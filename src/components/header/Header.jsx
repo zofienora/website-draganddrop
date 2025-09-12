@@ -1,6 +1,9 @@
 import './Header.css'
 import * as motion from "motion/react-client"
 import { useRef } from "react"
+import pic2 from '../../assets/pic2.png';
+
+
 
 function Header() {
     const constraintsRef = useRef(null)
@@ -15,13 +18,13 @@ function Header() {
 
 
 
-            <motion.div className="drag-container" ref={constraintsRef}>
+            <motion.div className="drag-container" ref={constraintsRef} style={constraints}>
                 <motion.div
-                drag
-                dragConstraints={constraintsRef}
-                dragElastic={0.2}
-                style={box}
-            />
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={box}
+                />
             </motion.div>
 
 
@@ -45,7 +48,13 @@ const constraints = {
 }
 
 const box = {
-  width: 100, // becomes '100px'
-  height: 100, // becomes '100px'
-  backgroundImage: "url('/src/assets/pic2.png')",
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic2})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+  // temporary for debugging so you can see it even if the image fails:
+  border: '1px solid #ccc'
 };
