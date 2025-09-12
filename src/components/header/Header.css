@@ -1,6 +1,9 @@
 .header {
    display: flex;
    justify-content: space-between;
+    position: relative; /* creates stacking context */
+  width: 100vw;
+  height: 100vh; /* if you want full viewport */
 }
 
 .header-name {
@@ -12,5 +15,23 @@
     font-size: 1.5rem;
     color: rgb(206, 203, 203);
     font-weight: bold;
+}
+
+.drag-container {
+  position: absolute;   /* take it out of flow */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;           /* ensure it’s above header-container */
+}
+
+.header-container {
+  position: absolute;   /* or keep static if you want */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;           /* under drag-container */
 }
 
