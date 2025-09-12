@@ -30,13 +30,49 @@ function Header() {
                     drag
                     dragConstraints={constraintsRef}
                     dragElastic={0.2}
-                    style={box}
+                    style={picone}
                 />
                 <motion.div
                     drag
                     dragConstraints={constraintsRef}
                     dragElastic={0.2}
-                    style={box}
+                    style={pictwo}
+                />
+                <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={picthree}
+                />
+                <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={picfour}
+                />
+                <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={picfive}
+                />
+                <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={picsix}
+                />
+                <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={picseven}
+                />
+                <motion.div
+                    drag
+                    dragConstraints={constraintsRef}
+                    dragElastic={0.2}
+                    style={piceight}
                 />
 
             </motion.div>
@@ -61,7 +97,17 @@ const constraints = {
     borderRadius: 10,
 }
 
-const box = {
+const picone = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic1})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+};
+
+const pictwo = {
   width: 100,
   height: 100,
   backgroundImage: `url(${pic2})`,
@@ -69,6 +115,64 @@ const box = {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
-  // temporary for debugging so you can see it even if the image fails:
-  border: '1px solid #ccc'
+};
+
+const picthree = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic3})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+};
+
+const picfour = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic4})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+};
+
+const picfive = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic5})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+};
+
+const picsix = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic6})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+};
+
+const picseven = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic7})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
+};
+
+const piceight = {
+  width: 100,
+  height: 100,
+  backgroundImage: `url(${pic8})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  borderRadius: 10,
 };
