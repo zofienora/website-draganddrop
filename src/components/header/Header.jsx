@@ -1,7 +1,15 @@
 import './Header.css'
 import * as motion from "motion/react-client"
 import { useRef } from "react"
+import pic1 from '../../assets/pic1.jpeg';
 import pic2 from '../../assets/pic2.png';
+import pic3 from '../../assets/pic3.jpeg';
+import pic4 from '../../assets/pic4.jpeg';
+import pic5 from '../../assets/pic5.jpeg';
+import pic6 from '../../assets/pic6.jpeg';
+import pic7 from '../../assets/pic7.jpeg';
+import pic8 from '../../assets/pic8.jpeg';
+import pic9 from '../../assets/pic9.jpeg';
 
 
 
@@ -25,6 +33,7 @@ function Header() {
                     dragElastic={0.2}
                     style={box}
                 />
+
             </motion.div>
 
 
