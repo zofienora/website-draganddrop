@@ -45,8 +45,7 @@ const constraints = {
 }
 
 const box = {
-    width: 100,
-    height: 100,
-    backgroundColor: "#ff0088",
-    borderRadius: 10,
-}
+  width: 100, // becomes '100px'
+  height: 100, // becomes '100px'
+  backgroundImage: "url('/src/assets/pic2.png')",
+};
