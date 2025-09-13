@@ -100,11 +100,14 @@ const constraints = {
 };
 
 const picone = {
-  width: 100,
-  height: 100,
+  width: 200,
+  height: 200,
   backgroundImage: `url(${pic1})`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
+  position: 'absolute',
+  top: '50%',
+  left: '20%',
   backgroundPosition: 'center',
   borderRadius: 10,
 };
