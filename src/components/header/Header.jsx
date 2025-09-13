@@ -196,7 +196,7 @@ const piceight = {
   backgroundImage: `url(${pic8})`,
   backgroundSize: 'cover',
   position: 'absolute',
-  top: '77%',
+  top: '30%',
   left: '50%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
