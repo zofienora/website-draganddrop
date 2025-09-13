@@ -178,10 +178,13 @@ const picsix = {
 };
 
 const picseven = {
-  width: 100,
-  height: 100,
+  width: 200,
+  height: 150,
   backgroundImage: `url(${pic7})`,
   backgroundSize: 'cover',
+  position: 'absolute',
+  top: '22%',
+  left: '20%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
