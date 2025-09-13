@@ -152,10 +152,13 @@ const picfour = {
 };
 
 const picfive = {
-  width: 100,
-  height: 100,
+  width: 150,
+  height: 170,
   backgroundImage: `url(${pic5})`,
   backgroundSize: 'cover',
+  position: 'absolute',
+  top: '15%',
+  left: '60%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
