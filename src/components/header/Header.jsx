@@ -113,13 +113,13 @@ const picone = {
 };
 
 const pictwo = {
-  width: 200,
-  height: 200,
+  width: 170,
+  height: 170,
   backgroundImage: `url(${pic2})`,
   backgroundSize: 'cover',
   position: 'absolute',
-  top: '20%',
-  left: '70%',
+  top: '45%',
+  left: '65%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
