@@ -191,10 +191,13 @@ const picseven = {
 };
 
 const piceight = {
-  width: 100,
+  width: 200,
   height: 100,
   backgroundImage: `url(${pic8})`,
   backgroundSize: 'cover',
+  position: 'absolute',
+  top: '77%',
+  left: '50%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
