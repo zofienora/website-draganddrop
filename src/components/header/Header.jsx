@@ -126,10 +126,13 @@ const pictwo = {
 };
 
 const picthree = {
-  width: 100,
-  height: 100,
+  width: 120,
+  height: 170,
   backgroundImage: `url(${pic3})`,
   backgroundSize: 'cover',
+  position: 'absolute',
+  top: '30%',
+  left: '90%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
