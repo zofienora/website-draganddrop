@@ -166,12 +166,12 @@ const picfive = {
 
 const picsix = {
   width: 100,
-  height: 100,
+  height: 200,
   backgroundImage: `url(${pic6})`,
   backgroundSize: 'cover',
   position: 'absolute',
   top: '15%',
-  left: '30%',
+  left: '1%',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   borderRadius: 10,
