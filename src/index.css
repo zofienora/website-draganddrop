@@ -48,7 +48,6 @@ button, input, select, textarea {
 
 /* 2. Layout Container */
 #root {
-  width: 95%;
   margin: 0 auto;
   min-height: 100%;
   display: flex;
