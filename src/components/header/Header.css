@@ -1,7 +1,7 @@
 .header {
-   display: flex;
-   justify-content: space-between;
-    position: relative; /* creates stacking context */
+  display: flex;
+  justify-content: space-between;
+  position: relative; /* creates stacking context */
   width: 100vw;
   height: 100vh; /* if you want full viewport */
 }
@@ -30,7 +30,6 @@
   position: absolute;   /* or keep static if you want */
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100vh;
   z-index: 1;           /* under drag-container */
 }
