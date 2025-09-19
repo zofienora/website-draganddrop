@@ -20,8 +20,8 @@ function Header() {
         <>
         <div className="header">
             <div className="header-container">
-                <p className="header-name">Lyna Hutchi</p>
-                <p className="header-job">Designer & Creative Director</p>
+                <p className="header-name container">Lyna Hutchi</p>
+                <p className="header-job container">Designer & Creative Director</p>
             </div>
 
 

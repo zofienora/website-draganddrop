@@ -46,6 +46,11 @@ button, input, select, textarea {
   background: none;
 }
 
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
 /* 2. Layout Container */
 #root {
   margin: 0 auto;
