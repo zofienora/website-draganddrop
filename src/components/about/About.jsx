@@ -12,7 +12,7 @@ function About() {
         <div className="about">
             <div className="container about-container">
                 <motion.div
-                initial={{ opacity: 0, y: 50 }}         // start slightly below & hidden
+                initial={{ opacity: 0, y: 80 }}         // start slightly below & hidden
                 whileInView={{ opacity: 1, y: 0 }}      // animate to normal place
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.3 }}  // triggers once, 30% in view

@@ -11,3 +11,9 @@
     display: flex;
     align-items: center;
 }
+
+.aboutme {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
