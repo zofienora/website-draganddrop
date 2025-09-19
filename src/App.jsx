@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/header/Header'
 import About from './components/about/About'
+import TypoOne from './components/typoOne/TypoOne'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>  
       <Header />  
       <About />      
+      <TypoOne />
     </>
   )
 }
