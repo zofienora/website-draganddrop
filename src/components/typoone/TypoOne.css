@@ -1,0 +1,21 @@
+.typoone {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  /* height optional if you want fixed band height */
+  /* height: 8rem; */
+}
+
+.typoone-scroller {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.typoone-text {
+  font-size: 5rem;       /* adjust */
+  font-weight: 700;
+  padding: 0 2rem;
+  line-height: 1;
+}

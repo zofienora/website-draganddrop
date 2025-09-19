@@ -1,5 +1,6 @@
 // TypoOne.tsx
 import { useRef } from "react";
+import './typoone.css';
 import {
   motion,
   useScroll,

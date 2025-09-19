@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './components/header/Header'
 import About from './components/about/About'
-import TypoOne from './components/typoOne/TypoOne'
+import TypoOne from './components/typoone/TypoOne'
 
 function App() {
 
@@ -9,7 +9,8 @@ function App() {
     <>  
       <Header />  
       <About />      
-      <TypoOne />
+      <TypoOne baseVelocity={-5}>Framer Motion</TypoOne>
+<TypoOne baseVelocity={5}>Scroll velocity</TypoOne>
     </>
   )
 }
