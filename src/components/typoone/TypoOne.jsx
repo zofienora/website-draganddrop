@@ -34,8 +34,7 @@ export default function TypoOne({ children = "Typo One", baseVelocity = 100 }) {
       <motion.div className="typoone-scroller scroller" style={{ x }}>
         <span className="typoone-text">{children} </span>
         <span className="typoone-text">{children} </span>
-        <span className="typoone-text">{children} </span>
-        <span className="typoone-text">{children} </span>
+
       </motion.div>
     </div>
   );

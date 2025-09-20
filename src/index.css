@@ -9,7 +9,7 @@
   padding: 0;
 }
 
-html, body {
+html, body, #root {
   height: 100%;
 }
 
@@ -19,7 +19,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #fff;
   color: #000;
+  margin: 0;              /* ← removes the extra page height */
+  overflow-x: hidden;
 }
+
+
 
 /* Remove list styles */
 ul, ol {
@@ -51,10 +55,3 @@ button, input, select, textarea {
   margin: 0 auto;
 }
 
-/* 2. Layout Container */
-#root {
-  margin: 0 auto;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
