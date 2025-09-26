@@ -1,35 +1,31 @@
-/* Provides the extra scroll distance while the 500px panel is pinned.
-   Adjust with the "scrollLength" prop (default 150vh). */
+/* Just enough scroll to pin while the text travels bottom→top */
 .typoone-spacer {
-  height: var(--scroll-len, 100vh);
+  border: 2px solid yellow;
+  height: 100%;
+  /* height set inline from JS (panel + travel) */
 }
 
-/* The 500px panel that pins to the top while you scroll */
 .typoone-section {
-  position: sticky;
-  top: 0;
-  overflow: hidden; /* keep the band clipped inside */
-  /* height is set inline via style={{ height: sectionHeight }} */
+  overflow: hidden;    
+  border: 2px solid orange;         /* keep band clipped inside the 500px panel */
+  /* height set inline (500px by default) */
 }
 
-/* A positioned viewport so we can move the band from bottom -> top */
 .typoone-viewport {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  border: 2px solid green;            /* keep band clipped inside the 500px panel */
 }
 
-/* The text band we slide vertically.
-   It is anchored at TOP:0 and we translateY it from (sectionHeight - bandHeight) down to 0. */
+/* The band we move vertically inside the 500px panel */
 .typoone-band {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   will-change: transform;
-  display: flex;            /* so its child scroller sizes to content height */
-  align-items: center;
+  border: 2px solid blueviolet;            /* keep band clipped inside the 500px panel */
+
 }
 
 /* Horizontal marquee row */
@@ -37,9 +33,10 @@
   display: inline-flex;
   white-space: nowrap;
   will-change: transform;
+  border: 2px solid blue;  
 }
 
-/* Typography — tweak to match your font */
+/* Typography — adjust to your font */
 .typoone-text {
   display: inline-block;
   padding-right: 2rem;
