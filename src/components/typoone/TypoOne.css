@@ -1,42 +1,37 @@
-.typoone {
+/* A tall section to drive the vertical motion.
+   Increase height for a longer “rise”. */
+.typoone-section {
+  height: 100vh;
   position: relative;
-  overflow: hidden;      /* hide overflow for marquee */
-  width: 100%;
-  padding: 2rem 0;
-  /* height optional if you want fixed band height */
-  /* height: 8rem; */
 }
 
+/* Sticky band sits at bottom while the section is in view,
+   then climbs up as you scroll past. */
+.typoone {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;   /* lets content behind remain clickable */
+  z-index: 2;
+  height: 500px;
+}
+
+/* Horizontal marquee row */
 .typoone-scroller {
- display: flex;
-  white-space: nowrap;   /* keep text on one line */
+  display: flex;
+  white-space: nowrap;
   will-change: transform;
+  padding: 0.5rem 0;      /* band height */
 }
 
+/* Typography — match your look */
 .typoone-text {
   display: inline-block;
-  padding-right: 2rem;   /* spacing between repeats */
-  font-size: clamp(2rem, 6vw, 6rem);
-  font-weight: 700;
+  padding-right: 2rem;
+  font-size: clamp(2rem, 7vw, 6rem);
+  font-weight: 800;
   line-height: 1;
-}
-
-.parallax {
-  overflow: hidden;
-  letter-spacing: -2px;
-  line-height: 0.8;
-  margin: 0;
-  white-space: nowrap;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.parallax .scroller {
-  font-weight: 600;
   text-transform: uppercase;
-  font-size: 64px;
-  display: flex;
-  white-space: nowrap;
-  display: flex;
-  flex-wrap: nowrap;
 }
