@@ -1,23 +1,23 @@
 .typoone {
   position: relative;
+  overflow: hidden;      /* hide overflow for marquee */
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  height: 500px;
+  padding: 2rem 0;
   /* height optional if you want fixed band height */
   /* height: 8rem; */
 }
 
 .typoone-scroller {
-  display: inline-flex;
-  white-space: nowrap;
+ display: flex;
+  white-space: nowrap;   /* keep text on one line */
   will-change: transform;
 }
 
 .typoone-text {
-  font-size: 5rem;       /* adjust */
+  display: inline-block;
+  padding-right: 2rem;   /* spacing between repeats */
+  font-size: clamp(2rem, 6vw, 6rem);
   font-weight: 700;
-  padding: 0 2rem;
   line-height: 1;
 }
 

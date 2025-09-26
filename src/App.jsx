@@ -10,9 +10,9 @@ function App() {
       <Header />  
       <About />    
       <section>
-        <TypoOne baseVelocity={-5}>Framer Motion</TypoOne>
-        <TypoOne baseVelocity={5}>Scroll velocity</TypoOne>
-      </section>  
+        <TypoOne baseVelocity={-30}>Framer Motion</TypoOne>
+        <TypoOne baseVelocity={30}>Scroll velocity</TypoOne>
+      </section>
     </>
   )
 }
