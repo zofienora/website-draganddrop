@@ -1,6 +1,6 @@
 // TypoOne.jsx
 import "./typoone.css";
-import { useRef } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import {
   motion,
   useScroll,
@@ -11,7 +11,7 @@ import {
   useAnimationFrame
 } from "framer-motion";
 
-// same wrap behavior as the TS demo
+// same wrap behavior as demo
 const wrap = (a, b, v) => {
   const min = Math.min(a, b);
   const max = Math.max(a, b);
@@ -19,21 +19,12 @@ const wrap = (a, b, v) => {
   return ((((v - min) % range) + range) % range) + min;
 };
 
-/**
- * Props
- * - baseVelocity: horizontal speed (same as the TS sample)
- * - sectionHeight: the fixed height of the pinned panel (default 500px)
- * - bandHeight: height of the moving text band (defaults 120px)
- * - scrollLength: how much page scroll to spend while the panel is pinned (e.g. "150vh" or pixels)
- */
 export default function TypoOne({
   children,
   baseVelocity = 100,
-  sectionHeight = 500,
-  bandHeight = 120,
-  scrollLength = "150vh",
+  sectionHeight = 500, // your requirement
 }) {
-  // ---------- Horizontal marquee (unchanged logic) ----------
+  // ---------- Horizontal marquee (unchanged from demo) ----------
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -50,37 +41,41 @@ export default function TypoOne({
     baseX.set(baseX.get() + moveBy);
   });
 
-  // ---------- Vertical movement while section is pinned ----------
-  // We pin the 500px panel using position: sticky. To create time to scroll
-  // the text from bottom->top, we wrap it in a taller "spacer" that defines
-  // how long the page stays pinned.
+  // ---------- Measure band height so it starts exactly at the bottom ----------
   const spacerRef = useRef(null);
+  const bandRef = useRef(null);
+  const [bandH, setBandH] = useState(0);
 
-  // Progress goes 0 -> 1 across the spacer height.
+  useLayoutEffect(() => {
+    if (!bandRef.current) return;
+    const measure = () => setBandH(bandRef.current.offsetHeight || 0);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(bandRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  // Travel distance: bottom -> top inside the 500px panel
+  const travel = Math.max(0, sectionHeight - bandH);
+
+  // Make the sticky pin last exactly the time needed to move from bottom to top:
+  // spacer height = panel (500) + travel distance
+  const spacerHeight = sectionHeight + travel;
+
+  // Progress across the spacer
   const { scrollYProgress } = useScroll({
     target: spacerRef,
-    offset: ["start end", "end start"], // start when spacer enters, end when it leaves
+    offset: ["start end", "end start"],
   });
 
-  // Move the band from bottom to top *inside* the 500px panel:
-  // y: (sectionHeight - bandHeight) -> 0
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [sectionHeight - bandHeight, 0]
-  );
+  // y goes from 'travel' (bottom) to 0 (top)
+  const y = useTransform(scrollYProgress, [0, 1], [travel, 0]);
 
   return (
-    // This outer div only provides the extra scroll distance.
-    <div className="typoone-spacer" ref={spacerRef} style={{ "--scroll-len": scrollLength }}>
-      {/* This panel stays pinned while the spacer is scrolling past */}
+    <div className="typoone-spacer" ref={spacerRef} style={{ height: spacerHeight }}>
       <section className="typoone-section" style={{ height: sectionHeight }}>
         <div className="typoone-viewport">
-          {/* The moving band starts at the bottom and rises to the top */}
-          <motion.div
-            className="typoone-band"
-            style={{ y, height: bandHeight }}
-          >
+          <motion.div className="typoone-band" style={{ y }} ref={bandRef}>
             <motion.div className="typoone-scroller" style={{ x }}>
               <span className="typoone-text">{children} </span>
               <span className="typoone-text">{children} </span>

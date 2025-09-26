@@ -1,7 +1,7 @@
 /* Provides the extra scroll distance while the 500px panel is pinned.
    Adjust with the "scrollLength" prop (default 150vh). */
 .typoone-spacer {
-  height: var(--scroll-len, 150vh);
+  height: var(--scroll-len, 100vh);
 }
 
 /* The 500px panel that pins to the top while you scroll */
