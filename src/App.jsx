@@ -8,9 +8,11 @@ function App() {
   return (
     <>  
       <Header />  
-      <About />      
-      <TypoOne baseVelocity={-5}>Framer Motion</TypoOne>
-<TypoOne baseVelocity={5}>Scroll velocity</TypoOne>
+      <About />    
+      <section>
+        <TypoOne baseVelocity={-5}>Framer Motion</TypoOne>
+        <TypoOne baseVelocity={5}>Scroll velocity</TypoOne>
+      </section>  
     </>
   )
 }
