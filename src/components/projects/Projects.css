@@ -1,4 +1,17 @@
 .container-projects {
     height: 100vh;
-    width: 100vw;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+.header-project{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header-description {
+    font-size: 1.5rem;
+    color: rgb(206, 203, 203);
+    font-weight: bold;
 }
