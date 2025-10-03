@@ -1,9 +1,4 @@
-function Projects() {
-    return(
-        <>
-        </>
-
-    )
-};
-
-export default Projects;
+.container-projects {
+    height: 100vh;
+    width: 100vw;
+}
