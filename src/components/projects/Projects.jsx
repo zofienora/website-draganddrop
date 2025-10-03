@@ -13,7 +13,7 @@ function Projects() {
         </div>
         <div className="project">
             <div className="project-itemone">
-                <img className="project-one" src={webone} alt="" />
+                <img className="project-one " src={webone} alt="" />
             </div>
         </div>
         <div className="project">
