@@ -1,7 +1,7 @@
 .container-projects {
-    height: 100vh;
     width: 95%;
     margin: 0 auto;
+    padding-bottom: 4rem;
 }
 
 .header-project{
@@ -13,4 +13,17 @@
     font-size: 1.5rem;
     color: rgb(206, 203, 203);
     font-weight: bold;
+}
+
+.project-itemone {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.project-one {
+    margin: 0 auto;
+    width: 75%;
+    margin: 2rem 0;
+    box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.5);
 }
