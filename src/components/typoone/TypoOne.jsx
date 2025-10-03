@@ -72,7 +72,7 @@ export default function TypoOne({
   const y = useTransform(scrollYProgress, [0, 1], [travel, 0]);
 
   return (
-    <div className="typoone-spacer" ref={spacerRef} style={{ height: spacerHeight }}>
+    <div className="typoone-spacer" ref={spacerRef} >
       <section className="typoone-section" style={{ height: sectionHeight }}>
         <div className="typoone-viewport">
           <motion.div className="typoone-band" style={{ y }} ref={bandRef}>

@@ -11,7 +11,8 @@ function App() {
       <About />    
       <section>
         <TypoOne baseVelocity={-5}>Framer Motion</TypoOne>
-        <TypoOne baseVelocity={5}>Scroll velocity</TypoOne>
+        <TypoOne baseVelocity={5}>Framer Motion</TypoOne>
+        {/* <TypoOne baseVelocity={5}>Scroll velocity</TypoOne> */}
       </section>
     </>
   )
