@@ -16,6 +16,11 @@ function Projects() {
                 <img className="project-one" src={webone} alt="" />
             </div>
         </div>
+         <div className="project">
+            <div className="project-itemtwo">
+                <img className="project-two" src={webtwo} alt="" />
+            </div>
+        </div>
         </>
 
     )
