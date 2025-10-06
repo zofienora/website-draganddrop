@@ -23,7 +23,7 @@
 
 .project-one {
     margin: 0 auto;
-    width: 75%;
+    width: 60%;
     margin: 5rem 0;
     box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.5);
 }
@@ -35,8 +35,7 @@
 
 .project-two {
     margin: 0 auto;
-    width: 75%;
+    width:60%;
     margin: 5rem 0;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
 }
-
