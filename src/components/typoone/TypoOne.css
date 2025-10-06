@@ -1,13 +1,11 @@
 /* Just enough scroll to pin while the text travels bottom→top */
 .typoone-spacer {
-  border: 2px solid yellow;
   height: 50%;
   /* height set inline from JS (panel + travel) */
 }
 
 .typoone-section {
   overflow: hidden;    
-  border: 2px solid orange;         /* keep band clipped inside the 500px panel */
   /* height set inline (500px by default) */
 }
 
@@ -16,7 +14,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border: 2px solid green;            /* keep band clipped inside the 500px panel */
 }
 
 /* The band we move vertically inside the 500px panel */
@@ -24,7 +21,6 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   will-change: transform;
-  border: 2px solid blueviolet;            /* keep band clipped inside the 500px panel */
 
 }
 
@@ -33,7 +29,6 @@
   display: inline-flex;
   white-space: nowrap;
   will-change: transform;
-  border: 2px solid blue;  
 }
 
 /* Typography — adjust to your font */
