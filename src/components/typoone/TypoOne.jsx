@@ -29,7 +29,7 @@ export default function TypoOne({
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
+  const velocityFactor = useTransform(smoothVelocity, [0, 500], [0, 8], { clamp: false });
   const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
 
   const dir = useRef(1);
