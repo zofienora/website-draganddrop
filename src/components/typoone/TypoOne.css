@@ -11,12 +11,13 @@
   align-items: flex-end;
 }
 
-/* The band we move vertically inside the 500px panel */
+/* The band we move vertically inside the viewport */
 .typoone-band {
   position: absolute;
-  top: 0.1%; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   will-change: transform;
-
 }
 
 /* Horizontal marquee row */

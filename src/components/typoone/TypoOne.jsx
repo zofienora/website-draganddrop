@@ -54,22 +54,29 @@ export default function TypoOne({
     ro.observe(bandRef.current);
     return () => ro.disconnect();
   }, []);
+  // Measure viewport height so the band can travel from bottom -> top of viewport
+  const [vh, setVh] = useState(typeof window !== 'undefined' ? window.innerHeight : 800);
+  useLayoutEffect(() => {
+    const onResize = () => setVh(window.innerHeight);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
-  // Travel distance: bottom -> top inside the 500px panel
-  const travel = Math.max(0, sectionHeight - bandH);
+  // Travel distance (px): how far the band needs to move so its top reaches the top of the viewport
+  const travel = Math.max(0, vh - bandH);
 
-  // Make the sticky pin last exactly the time needed to move from bottom to top:
-  // spacer height = panel (500) + travel distance
-  const spacerHeight = sectionHeight + travel;
+  // The spacer should be viewport height + travel so the sticky viewport is active while the band moves
+  const spacerHeight = vh + travel;
 
-  // Progress across the spacer
+  // Progress across the spacer: start when spacer top reaches viewport top, end when spacer bottom reaches viewport top
   const { scrollYProgress } = useScroll({
     target: spacerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end start"],
   });
 
-  // y goes from 'travel' (bottom) to 0 (top)
-  const y = useTransform(scrollYProgress, [0, 1], [travel, 0]);
+  // y: 0px (band at bottom) -> -travel px (band moved up)
+  const y = useTransform(scrollYProgress, [0, 1], [0, -travel]);
 
   return (
     <div className="typoone-spacer" ref={spacerRef} style={{ height: spacerHeight }}>

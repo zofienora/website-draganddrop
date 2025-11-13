@@ -11,7 +11,7 @@ function App() {
     <>  
       <Header />  
       <About />    
-      <section>
+      <section style={{ position: 'relative' }}>
         <TypoOne baseVelocity={-5}>CURRENT WORKS   ... </TypoOne>
       </section>
       <Projects />
