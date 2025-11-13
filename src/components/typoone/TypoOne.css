@@ -1,24 +1,14 @@
 /* Just enough scroll to pin while the text travels bottom→top */
 .typoone-spacer {
-  height: 800px;
-  border: 2px solid red;
   /* height set inline from JS (panel + travel) */
-}
-
-.typoone-section {
-/*   overflow: hidden;  
- */  border: 1px solid blue;
-  position: relative;
-  width: 100%;  
-  height: 800px; 
-  /* height set inline (500px by default) */
+  width: 100%;
 }
 
 .typoone-viewport {
-  position: relative;
+  /* sticky positioning set inline: position sticky, top 0, height 100vh */
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
 
 /* The band we move vertically inside the 500px panel */

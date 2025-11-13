@@ -72,19 +72,18 @@ export default function TypoOne({
   const y = useTransform(scrollYProgress, [0, 1], [travel, 0]);
 
   return (
-    <div className="typoone-spacer" ref={spacerRef} >
-      <section className="typoone-section" style={{ height: sectionHeight }}>
-        <div className="typoone-viewport">
-          <motion.div className="typoone-band" style={{ y }} ref={bandRef}>
-            <motion.div className="typoone-scroller" style={{ x }}>
-              <span className="typoone-text">{children} </span>
-              <span className="typoone-text">{children} </span>
-              <span className="typoone-text">{children} </span>
-              <span className="typoone-text">{children} </span>
-            </motion.div>
+    <div className="typoone-spacer" ref={spacerRef} style={{ height: spacerHeight }}>
+      {/* Sticky viewport: pins to top of screen while spacer scrolls */}
+      <div className="typoone-viewport" style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden" }}>
+        <motion.div className="typoone-band" style={{ y }} ref={bandRef}>
+          <motion.div className="typoone-scroller" style={{ x }}>
+            <span className="typoone-text">{children} </span>
+            <span className="typoone-text">{children} </span>
+            <span className="typoone-text">{children} </span>
+            <span className="typoone-text">{children} </span>
           </motion.div>
-        </div>
-      </section>
+        </motion.div>
+      </div>
     </div>
   );
 }
