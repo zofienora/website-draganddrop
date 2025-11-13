@@ -12,7 +12,7 @@ function App() {
       <Header />  
       <About />    
       <section>
-        <TypoOne baseVelocity={-5}>PROJECTS</TypoOne>
+        <TypoOne baseVelocity={-5}>CURRENT WORKS   ... </TypoOne>
       </section>
       <Projects />
       <Contact />

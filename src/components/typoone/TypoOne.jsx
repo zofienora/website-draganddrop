@@ -22,7 +22,7 @@ const wrap = (a, b, v) => {
 export default function TypoOne({
   children,
   baseVelocity = 100,
-  sectionHeight = 500, // your requirement
+  sectionHeight = 800, 
 }) {
   // ---------- Horizontal marquee (unchanged from demo) ----------
   const baseX = useMotionValue(0);

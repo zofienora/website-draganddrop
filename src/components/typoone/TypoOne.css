@@ -1,11 +1,16 @@
 /* Just enough scroll to pin while the text travels bottom→top */
 .typoone-spacer {
-  height: 400px;
+  height: 800px;
+  border: 2px solid red;
   /* height set inline from JS (panel + travel) */
 }
 
 .typoone-section {
-  overflow: hidden;    
+/*   overflow: hidden;  
+ */  border: 1px solid blue;
+  position: relative;
+  width: 100%;  
+  height: 800px; 
   /* height set inline (500px by default) */
 }
 
