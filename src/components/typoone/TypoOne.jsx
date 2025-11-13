@@ -69,14 +69,37 @@ export default function TypoOne({
   // The spacer should be viewport height + travel so the sticky viewport is active while the band moves
   const spacerHeight = vh + travel;
 
-  // Progress across the spacer: start when spacer top reaches viewport top, end when spacer bottom reaches viewport top
-  const { scrollYProgress } = useScroll({
-    target: spacerRef,
-    offset: ["start start", "end start"],
-  });
+  // Use a motion value and a scroll listener to control y precisely.
+  // We want progress = 0 when spacer.top === 0 (fully visible at top),
+  // and progress = 1 when spacer.top === -travel (band has moved up by `travel`).
+  const y = useMotionValue(0);
 
-  // y: 0px (band at bottom) -> -travel px (band moved up)
-  const y = useTransform(scrollYProgress, [0, 1], [0, -travel]);
+  useLayoutEffect(() => {
+    if (!spacerRef.current) return;
+    let rafId = null;
+
+    const onScroll = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const rect = spacerRef.current.getBoundingClientRect();
+        // rect.top is distance from viewport top to spacer top. When rect.top=0 => start.
+        const delta = -rect.top; // how many px we've scrolled into the spacer
+        const prog = Math.min(1, Math.max(0, travel > 0 ? delta / travel : 1));
+        y.set(-prog * travel);
+      });
+    };
+
+    // initialize
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [travel, spacerRef, y]);
 
   return (
     <div className="typoone-spacer" ref={spacerRef} style={{ height: spacerHeight }}>
